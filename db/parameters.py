@@ -1,0 +1,1 @@
+WORKED_DELTA_TIME = 604800 # 7 days in seconds

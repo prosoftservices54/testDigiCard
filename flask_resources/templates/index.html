@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    <script src="../static/js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="button-navbar"><i class="fa fa-home"></i><span>Home</span></li>
+                <li class="button-navbar" id="reward"><i class="fa fa-cutlery"></i><span>Récompenses</span></li>
+                <li class="button-navbar active" id="game"><i class="fa fa-star"></i><span>Jeux</span></li>
+                <li class="button-navbar" id="account"><i class="fa fa-user"></i><span>Compte</span></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="game-content" class="hidden">
+            <div id="top-section">
+                <h1>Slot Machine</h1>
+                <p>Click the spin button to play</p>
+                <p id="nb-games"></p>
+            </div>
+            <div id="middle-section">
+                <div class="slot-machine">
+                    <div class="reel" id="reel1">🍒</div>
+                    <div class="reel" id="reel2">🍋</div>
+                    <div class="reel" id="reel3">🍊</div>
+                </div>
+                <button id="spinButton">Spin</button>
+                <button id="unlock-wheel">Débloquer</button>
+                <p id="result"></p>
+            </div>
+        </div>
+        <div id="account-content" class="hidden">
+            <div class="account-box">
+                <h2>Mon compte</h2>
+                <p id="accountMessage"></p>
+                
+                <div class="rewards-section visit-count">
+                    <strong>Nombre de visites :</strong> <span id="visitCount">0</span>
+                    <strong>Récompenses gagnées :</strong>
+                    <ul id="rewardList">
+                    </ul>
+                </div>
+                
+                <button id="logoutButton">Se déconnecter</button>
+            </div>
+        </div>
+        <div id="admin-account-content" class="hidden">
+            <div class="account-box">
+                <h2>Mon compte</h2>
+                <input type="text" name="phone-counter" id="phone-input-counter" placeholder="Numéro du client">
+                <button id="search-button">Ajouter une visite</button>
+                <div id="clients-list" class="clients-list"></div>
+                <button id="logoutButtonAdmin">Se déconnecter</button>
+            </div>
+        </div>
+        <div id="admin-reward-content" class="hidden">
+            <h2>Gérer les Récompenses</h2>
+            <!-- Conteneur pour afficher les liens -->
+            <div id="reward-container"></div>
+            <button id="add-reward">Ajouter un reward</button>
+        </div>
+        <div id="login-section">
+            <h2>Connexion</h2>
+            <form id="login-form">
+                <label for="phone">Téléphone</label>
+                <input type="text" id="phone" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" required>
+                <button type="button" id="login-button">Se connecter</button>
+                <button type="button" id="register-menu">S'enregistrer</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
+        <div id="register-section" class="hidden">
+            <h2>Inscription</h2>
+            <form id="register-form">
+                <label for="newPhone">Numéro de téléphone</label>
+                <input type="text" id="newPhone" required>
+                <label for="newPassword">Mot de passe</label>
+                <input type="password" id="newPassword" required>
+                <label for="newBirthdate">Date de naissance</label>
+                <input type="date" id="newBirthdate" required>
+                <label for="newGender">Genre</label>
+                <select id="newGender" required>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+                <button type="button" id="register-button">S'inscrire</button>
+            </form>
+            <p id="register-message"></p>
+        </div>
+        <div id="google-review-popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="close-popup" class="close-btn">&times;</span>
+                <h2>Votre avis compte pour nous !</h2>
+                <p>Aidez-nous à améliorer nos services en laissant un avis.</p>
+            </div>
+        </div>
+        <div id="admin-game-content" class="hidden">
+            <h2>Gestion des liens</h2>
+            <!-- Conteneur pour afficher les liens -->
+            <div id="link-container"></div>
+            <button id="add-link">Ajouter un lien</button>
+        </div>
+    </main>
+    <script src="../static/js/app.js" defer></script>
+</body>
+</html>
